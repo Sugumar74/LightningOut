@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lightning Out Example</title>
+    <!-- Correct path for lightning.out.js -->
+    <script src="https://creationtechnologysoluti-ab-dev-ed.develop.my.site.com/lightning/lightning.out.js"></script>
+</head>
+<body>
+    <h1>External Website (Lightning Out Test)</h1>
+    <div id="lwcContainer"></div>
+
+    <script>
+        $Lightning.use(
+            "c:LightningOutApp",   // Your Aura Application
+            function() {
+                $Lightning.createComponent(
+                    "c:myComponent",   // Your Aura wrapper around the LWC
+                    {},                 
+                    "lwcContainer",     
+                    function(cmp) {
+                        console.log("LWC loaded successfully!");
+                    }
+                );
+            },
+            "https://creationtechnologysoluti-ab-dev-ed.develop.my.site.com"  // Base community/Domain URL
+        );
+    </script>
+</body>
+</html>
